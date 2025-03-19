@@ -12,10 +12,11 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    _navigatetohome(); // Navigate after delay
+    _navigateToHome();
   }
 
-  _navigatetohome() async {
+  _navigateToHome() async {
+    // Wait 1.5 seconds before navigating
     await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
       context,
@@ -26,12 +27,25 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // ✅ White background
+      backgroundColor: Colors.white, // White background
       body: Center(
-        child: Image.asset(
-          'assets/facebook_logo.png', // ✅ Facebook logo (add this to assets)
-          width: 120, // ✅ Adjust size
+        child: Container(
+          width: 120,
           height: 120,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color(0xFF1877F2), // Facebook blue color
+          ),
+          child: const Center(
+            child: Text(
+              'f',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 80,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
       ),
     );
