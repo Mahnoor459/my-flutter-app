@@ -20,7 +20,8 @@ class _SplashState extends State<Splash> {
     await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Facebook')),
+      MaterialPageRoute(
+          builder: (context) => const MyHomePage(title: 'Grocery Store')),
     );
   }
 
@@ -38,7 +39,7 @@ class _SplashState extends State<Splash> {
           ),
           child: const Center(
             child: Text(
-              'f',
+              'G',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 80,
